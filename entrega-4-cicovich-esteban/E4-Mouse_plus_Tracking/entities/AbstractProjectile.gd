@@ -21,3 +21,7 @@ func _physics_process(delta):
 
 func _on_Timer_timeout():
 	emit_signal("delete_requested", self)
+
+
+func _on_VisibilityNotifier2D_viewport_exited(viewport):
+	queue_free()
