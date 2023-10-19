@@ -13,20 +13,16 @@ margin_top = 7.0
 margin_right = 171.0
 margin_bottom = 35.0
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
-margin_right = 14.0
-margin_bottom = 28.0
-
-[node name="Input" type="Label" parent="HBoxContainer/PanelContainer"]
+[node name="Input" type="Button" parent="HBoxContainer"]
 unique_name_in_owner = true
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 7.0
-margin_bottom = 21.0
+margin_right = 12.0
+margin_bottom = 28.0
 
 [node name="Action" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
-margin_left = 18.0
+margin_left = 16.0
 margin_top = 7.0
-margin_right = 18.0
+margin_right = 16.0
 margin_bottom = 21.0
+
+[connection signal="pressed" from="HBoxContainer/Input" to="." method="_on_Input_pressed"]
