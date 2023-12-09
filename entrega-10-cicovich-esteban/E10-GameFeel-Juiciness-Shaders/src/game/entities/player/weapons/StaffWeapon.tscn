@@ -314,3 +314,4 @@ _pitch_scales = [ [ 2.5, 3.0 ] ]
 [node name="FX" type="Sprite" parent="."]
 position = Vector2( 5, 0 )
 scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )

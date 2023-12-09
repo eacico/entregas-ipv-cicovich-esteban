@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.629883, 0, 0, 1, 0.321569, 0, 0, 0.101961 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 2 )
+
+[sub_resource type="OpenSimplexNoise" id=4]
+
+[sub_resource type="NoiseTexture" id=5]
+width = 5
+height = 5
+as_normalmap = true
+noise = SubResource( 4 )
+
+[node name="Bleed" type="Particles2D"]
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 0.77
+visibility_rect = Rect2( -50, -50, 100, 100 )
+local_coords = false
+process_material = SubResource( 3 )
+texture = SubResource( 5 )

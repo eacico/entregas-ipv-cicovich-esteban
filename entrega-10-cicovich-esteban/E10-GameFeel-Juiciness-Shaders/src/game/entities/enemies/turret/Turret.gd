@@ -9,6 +9,7 @@ onready var raycast: RayCast2D = $RayCast2D
 onready var body_anim: AnimatedSprite = $Body
 onready var hp_progress: ProgressBar = $HpProgress
 onready var hit_sfx: AudioStreamPlayer2D = $"%HitSFX"
+onready var bleed = $Bleed
 
 export (PackedScene) var projectile_scene: PackedScene
 
@@ -85,6 +86,7 @@ func apply_movement() -> void:
 ## dependiendo de si el enemigo esta o no alerta
 func notify_hit(amount: int = 1) -> void:
 	emit_signal("hit", amount)
+	bleed.emitting = true
 
 
 ## Ahora manejamos una pool de HP del enemigo. A diferencia del Player,

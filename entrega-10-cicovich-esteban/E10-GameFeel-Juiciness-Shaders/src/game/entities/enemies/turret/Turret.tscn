@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://src/game/entities/enemies/turret/DetectionArea.gd" type="Script" id=1]
 [ext_resource path="res://src/game/entities/enemies/turret/TurretStateMachine.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://assets/sound/sfx/enemies/20_orc_special_atk.wav" type="AudioStream" id=21]
 [ext_resource path="res://assets/sound/sfx/enemies/21_orc_damage_1.wav" type="AudioStream" id=22]
 [ext_resource path="res://assets/sound/sfx/enemies/24_orc_death_spin.wav" type="AudioStream" id=23]
+[ext_resource path="res://src/resources/particles/bleed.tscn" type="PackedScene" id=24]
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 9 )
@@ -425,11 +426,13 @@ bus = "TurretAudio"
 [node name="FirePosition" type="Position2D" parent="."]
 position = Vector2( 0, -18.0339 )
 
+[node name="Bleed" parent="." instance=ExtResource( 24 )]
+position = Vector2( -3, -12 )
+
 [node name="Body" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -16 )
 frames = SubResource( 7 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="HpProgress" type="ProgressBar" parent="."]
